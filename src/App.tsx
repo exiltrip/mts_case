@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes} from "react-router";
+import {BrowserRouter} from "react-router-dom";
+import Header from "./components/header";
+import Main from "./components/main";
+import './assets/app.sass'
+import DreamRoute from "./components/dreamRoute";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+
+    const Map: any = () => {};
+
+    return (
+        <BrowserRouter>
+            <Header/>
+            <Routes>
+                <Route path="/" element={<Main/>} />
+                <Route path="/route" element={<DreamRoute/>} />
+            </Routes>
+        </BrowserRouter>
+    );
+};
 
 export default App;
